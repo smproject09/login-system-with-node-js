@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(35, 35, 35);
+    background: url("../images/bg.png");
+ }
+ /* Login page */
+.login_section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login_main{
+    position: relative;
+    min-width: 400px;
+    background-color: #fff;
+    border-top: 10px solid #0f54cb;
+    border-radius: 5px;
+    box-shadow: 0 0 50px rgba(0,0,0,.2);
+}
+
+.login_main_top{
+    position: absolute;
+    top: -37px;
+    display: flex;
+    justify-content: flex-end;
+    min-width: 400px;
+    z-index: 10;
+}
+.login_main_top ul{
+    display: flex;
+    list-style: none;
+}
+
+.login_main_top ul li a{
+    display: inline-block;
+    padding: .2rem 1rem;
+    margin-left: .2rem;
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+    background-color: #565656;
+    border-bottom: 10px solid #0f54cb;
+    border-radius: 10px 10px 0 0;
+    transform: translateY(5px);
+    transition: all .5s;
+}
+.login_main_top ul li a:hover{
+    background-color: #000;
+    transform: translateY(0px);
+}
+.login_container h1{
+    padding: 1rem 0;
+    text-align: center;
+    color: rgb(36, 69, 169);
+}
+.login_container form{
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem 2rem 2rem;
+}
+.login_container form label{
+    margin-top: 1rem;
+}
+
+.login_container form input{
+    margin-top: .5rem;
+    border: 1px solid #eee;
+    outline: none;
+    padding: .5rem;
+    border-radius: .2rem;
+}
+.login_container form input[type="submit"]{
+    margin-top: 1rem;
+    color: #fff;
+    background-color: rgb(36, 69, 169);
+    cursor: pointer;
+}
+ /* Dashboard page ============================ */
+ header,
+nav,
+.dashboard main,
+.users_content main{
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+}
+header{
+    padding: 2rem;
+    color: #e5e3e3;
+    background: #04303a;
+    text-align: center;
+}
+.topbar{
+    padding: .5rem;
+    color: #fff;
+    background-color: #000;
+}
+.topbar nav{
+    background-color: transparent;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+}
+nav ul li a{
+    display: inline-block;
+    padding: .5rem 1rem;
+    color: #cbcbcb;
+    text-decoration: none;
+} 
+.dashboard main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 0 50px rgba(0,0,0,.2);
+}
+.dashboard main h1{
+    font-size: 2em;
+    color: #b5b3b3;
+}
+
+/* Error ====================== */
+.error{ color: red;}
+.error_message,
+.success_message{
+    display: none;
+    margin: 0 auto;
+    max-width: 250px;
+    padding: .2rem .5rem;
+    border-radius: 5px;
+}
+.error_message{
+    color: rgb(133, 4, 4);
+    background-color: rgb(255, 186, 186);
+}
+.success_message{
+    color: rgb(17, 72, 159);
+    background-color: rgb(186, 212, 255);
+}
+
+/* users content =================== */
+.users_content main{
+    padding: 2rem;
+}
+.users_content table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.users_content table th,
+.users_content table td{
+    padding: .5rem;
+    border: 1px solid #eee;
+}
+.users_content table td:nth-child(6){text-align: center;}
+.users_content table td:last-child{text-align: center;}
+.delete_box_icon_img,
+.logout_icon_img{
+    cursor: pointer;
+    width: 15px;
+}
+.cycle_icon_img{
+    cursor: pointer;
+    width: 20px;
+}

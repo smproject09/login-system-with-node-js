@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="source/css/animate.css">
+    <link rel="stylesheet" href="source/css/style.css">
+</head>
+<body>
+    <section class="login_section">
+        <main class="login_main animate__animated animate__zoomIn">
+            <div class="login_main_top">
+                <ul>
+                    <li><a href="#" class="login_link">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </div>
+            <div class="login_container">
+                <h1>REGISTER</h1>
+                
+                <div class="error_message"></div>
+                <div class="success_message"></div>
+
+                <form action="">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" placeholder="Your name" id="reg_name">
+                    <p class="error reg_name_error"></p>
+
+                    <label for="phone">Phone Number</label>
+                    <input type="number" name="phone" placeholder="Phone number" id="reg_phone">
+                    <p class="error reg_name_phone"></p>
+
+                    <label for="phone">Email ID</label>
+                    <input type="email" name="email" placeholder="Email" id="reg_email">
+                    <p class="error reg_name_email"></p>
+                    
+                    <label for="password">Passowrd</label>                    
+                    <input type="password" name="password" placeholder="Password" id="reg_password">
+                    <p class="error reg_name_password"></p>
+
+                    <input type="submit" value="REGISTER">
+                </form>
+            </div>
+        </main>
+    </section>
+    <script>
+        const loginContainer = document.querySelector('.login_main');
+        const loginLink = document.querySelector('.login_link');
+
+        loginLink.addEventListener('click', (e)=>{
+            e.preventDefault();
+            loginContainer.classList.remove('animate__zoomIn');
+            loginContainer.classList.add('animate__zoomOut');
+            setTimeout(()=>{
+                location.href = "index.html";
+            },500);
+        });
+
+    </script>
+</body>
+</html>
