@@ -1,0 +1,8 @@
+{
+  "name": "login-system",
+  "version": "1.0.0",
+  "description": "This is the login system project",
+  "main": "app.js",
+  "author": "Sandip Mandal",
+  "license": "MIT"
+}
