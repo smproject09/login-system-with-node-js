@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="source/css/animate.css">
-    <link rel="stylesheet" href="source/css/style.css">
-</head>
+<%- include('./partials/header.ejs'); %>
 <body>
     <section class="login_section">
         <main class="login_main animate__animated animate__zoomIn">
             <div class="login_main_top">
                 <ul>
                     <li><a href="#" class="login_link">Login</a></li>
-                    <li><a href="register.html">Register</a></li>
+                    <li><a href="/register">Register</a></li>
                 </ul>
             </div>
             <div class="login_container">
@@ -54,7 +45,7 @@
             loginContainer.classList.remove('animate__zoomIn');
             loginContainer.classList.add('animate__zoomOut');
             setTimeout(()=>{
-                location.href = "index.html";
+                location.href = "/";
             },500);
         });
 
