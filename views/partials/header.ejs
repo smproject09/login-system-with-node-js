@@ -8,3 +8,29 @@
     <link rel="stylesheet" href="source/css/animate.css">
     <link rel="stylesheet" href="source/css/style.css">
 </head>
+<body>
+    <section class="topbar">
+        <nav>
+            <ul>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <% if(loggedInUser.role == "Admin") { %>
+                <li><a href="/user">User Details</a></li>
+                <% } %>
+            </ul>
+            <ul>
+                <li><a href="#"><img src="source/images/logout-icon-img.png" alt="logout" class="logout_icon_img" onclick="logout()"></a></li>
+            </ul>
+        </nav>
+    </section>
+    <section>
+        <header><h1>Loging System</h1></header>
+    </section>
+
+    <script>
+        function logout(){
+            fetch('/',{
+                method: 'DELETE',
+            });
+            window.location.replace('/');
+        }
+    </script>

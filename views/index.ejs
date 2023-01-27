@@ -1,4 +1,13 @@
-<%- include('./partials/header.ejs'); %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="source/css/animate.css">
+    <link rel="stylesheet" href="source/css/style.css">
+</head>
 <body>
     <section class="login_section">
         <main class="login_main animate__animated animate__zoomIn">
@@ -10,16 +19,23 @@
             </div>
             <div class="login_container">
                 <h1>LOGIN</h1>
-                <div class="error_message"></div>
-                <div class="success_message"></div>
-                <form action="">
-                    <label for="username">Username</label>
-                    <input type="text" name="username" placeholder="Email id or phone number" id="username">
-                    <p class="error username_error"></p>
 
+                <% if(errors.common) { %>
+                <div class="error_message" style="display: block;"> <%= errors.common.msg %></div>
+                <% } %>
+
+                <form action="/" method="POST">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" placeholder="Email id or phone number" value="<%= data.username %>" id="username">
+                    <% if(errors.username) { %>
+                    <p class="error username_error" style="display: block;"><%= errors.username.msg %></p>
+                    <% } %>
                     <label for="password">Password</label>
                     <input type="password" name="password" placeholder="Password" id="password">
                     <p class="error password_error"></p>
+                    <% if(errors.password) { %>
+                    <p class="error password_error" style="display: block;"><%= errors.password.msg %></p>
+                    <% } %>
 
                     <input type="submit" value="LOGIN">
                 </form>

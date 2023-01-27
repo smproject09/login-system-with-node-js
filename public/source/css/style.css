@@ -17,7 +17,7 @@ body{
 }
 .login_main{
     position: relative;
-    min-width: 400px;
+    width: 400px;
     background-color: #fff;
     border-top: 10px solid #0f54cb;
     border-radius: 5px;
@@ -137,7 +137,7 @@ nav ul li a{
 .error_message,
 .success_message{
     display: none;
-    margin: 0 auto;
+    margin: 1rem auto;
     max-width: 250px;
     padding: .2rem .5rem;
     border-radius: 5px;
@@ -164,7 +164,7 @@ nav ul li a{
     padding: .5rem;
     border: 1px solid #eee;
 }
-.users_content table td:nth-child(6){text-align: center;}
+.users_content table td:nth-child(5){text-align: center;}
 .users_content table td:last-child{text-align: center;}
 .delete_box_icon_img,
 .logout_icon_img{

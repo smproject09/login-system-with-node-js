@@ -1,25 +1,11 @@
 <%- include('./partials/header.ejs'); %>
-<body>
-    <section class="topbar">
-        <nav>
-            <ul>
-                <li><a href="/dashboard">Dashboard</a></li>
-                <li><a href="/user">User Details</a></li>
-            </ul>
-            <ul>
-                <li><a href=""><img src="source/images/logout-icon-img.png" alt="logout" class="logout_icon_img"></a></li>
-            </ul>
-        </nav>
-    </section>
-    <section>
-        <header><h1>Loging System</h1></header>
-    </section>
     <section class="users_content">
         <main>
+            <div class="error_message"></div>
+            <div class="success_message"></div>
             <table>
                 <thead>
                     <tr>
-                        <th>SL.</th>
                         <th>Name</th>
                         <th>Phone</th>
                         <th>Email</th>
@@ -29,18 +15,69 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Sandip Mandal</td>
-                        <td>85698542569</td>
-                        <td>abc@gmail.com</td>
-                        <td>Admin</td>
-                        <td><img src="source/images/cycle-icon.png" alt="Change user role" class="cycle_icon_img"></td>
-                        <td><img src="source/images/delete-box-icon.png" alt="Delete user" class="delete_box_icon_img"></td>
-                    </tr>
+                    <% users.forEach(user => {  %>
+                        <tr id="<%= user._id %>">
+                            <td><%= user.name %></td>
+                            <td><%= user.phone %></td>
+                            <td><%= user.email %></td>
+                            <td><%= user.role %></td>
+                            <td><img src="source/images/cycle-icon.png" alt="Change user role" class="cycle_icon_img" onclick="changeRole(`<%= user._id %>`, `<%= user.role %>`)"></td>
+                            <td><img src="source/images/delete-box-icon.png" alt="Delete user" class="delete_box_icon_img" onclick="deleteUser(`<%= user._id %>`)"></td>
+                        </tr>
+                    <% }); %>
                 </tbody>
             </table>
         </main>
     </section>
+    <script>
+        async function deleteUser(id){
+            await fetch(`/user/${id}`,{
+                method: "DELETE"
+            })
+            .then((response) => response.json())
+            .then((result) => {
+                if(result.errors){
+                    let errordiv = document.querySelector('.error_message');
+                    errordiv.innerHTML = result.errors.common.msg;
+                    errordiv.style.display = 'block';
+                }else{
+                    let successdiv = document.querySelector('.success_message');
+                    successdiv.innerHTML = result.message;
+                    successdiv.style.display = 'block';
+                    document.getElementById(id).remove();
+                }
+            })
+        }
+
+        async function changeRole(id, role){
+            let data = {
+                id,
+                userRole: role,
+            }
+            await fetch(`/user`, {
+                method: "PUT",
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-type': 'application/json',
+                }
+            })
+            .then((response) => response.json())
+            .then((result) => {
+                console.log(result)
+                if(result.errors){
+                    let errordiv = document.querySelector('.error_message');
+                    errordiv.innerHTML = result.errors.common.msg;
+                    errordiv.style.display = 'block';
+                }else{
+                    let successdiv = document.querySelector('.success_message');
+                    successdiv.innerHTML = result.message;
+                    successdiv.style.display = 'block';
+                    setTimeout(()=>{
+                        window.location.reload();
+                    }, 5000);
+                }
+            });
+        }
+    </script>
 </body>
 </html>
