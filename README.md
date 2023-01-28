@@ -1,7 +1,7 @@
 
 # Login system with node js
 
-In this project I create a basic login system with help of express.
+In this project I create a basic login system with help of html, css, javascript and express js and use mongodb database.
 
 ## Authors
 
