@@ -12,6 +12,35 @@ In this project I create a basic login system with help of express.
 You must have the basic knowledge of HTML, CSS, JavaScript, Express JS & Mongodb to undestand this project.
 
 
+## Run Locally
+
+Make sure all dependencies are installed in your project directory. You can install dependencies using npm or yarn. I use yarn.
+
+```bash
+  git clone https://github.com/smproject09/login-system-with-node-js.git
+```
+
+Go to the project directory
+
+```bash
+  cd login-system-with-node-js
+```
+
+Install dependencies
+
+```bash
+  yarn install
+```
+
+Create .env file in your project directory and decleare all environment variables. The require environment variables are mention in the bellow. Then start the server.
+
+Start the server
+
+```bash
+  yarn start
+```
+
+
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file
@@ -39,28 +68,3 @@ You can create any secret key by using this website
 
 
 [sha1 online](http://www.sha1-online.com/)
-## Run Locally
-
-Make sure all dependencies are installed in your project directory.
-
-```bash
-  git clone https://github.com/smproject09/login-system-with-node-js.git
-```
-
-Go to the project directory
-
-```bash
-  cd login-system-with-node-js
-```
-
-Install dependencies
-
-```bash
-  yarn install
-```
-
-Start the server
-
-```bash
-  yarn start
-```
